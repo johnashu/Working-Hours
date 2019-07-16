@@ -44,16 +44,13 @@ class WorkingTime:
         return self
 
     def get_start_hour(self, day):
-        self.days_dict[self.fmt_day(day)]["start"]
-        return self
+        return self.days_dict[self.fmt_day(day)]["start"]
 
     def get_end_hour(self, day):
-        self.days_dict[self.fmt_day(day)]["end"]
-        return self
+        return self.days_dict[self.fmt_day(day)]["end"]
 
     def get_start_and_end(self, day):
-        self.get_start_hour(day), self.get_end_hour(day)
-        return self
+        return self.get_start_hour(day), self.get_end_hour(day)
 
     def parse_datetime(self, hour):
         return dt.strptime(f"{hour[:2]}:{hour[2:4]}", FMT)
@@ -118,7 +115,7 @@ if __name__ == "__main__":
         .set_start_hour("monday", "0730")
         .set_end_hour("monday", "1800")
         .set_start_and_end("TUESDAY", "0730", "1800")
-        .set_start_and_end("wednesday", "0730", "1800")
+        .set_start_and_end("wednesday", "0000", "0000")
         .set_start_and_end("THUrsday", "0000", "0000")
         .set_start_and_end("FrIDAY", "0000", "0000")
     )
